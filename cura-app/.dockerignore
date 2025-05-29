@@ -1,0 +1,18 @@
+# /cura-app/.dockerignore
+
+# Exclude secrets - they will be injected at runtime
+secrets/
+*.env
+
+# Exclude Git and Python cache files
+.git/
+.gitignore
+__pycache__/
+*.pyc
+
+# Exclude local development environments
+.venv/
+venv/
+
+# Exclude documents source folder if it's very large and not needed at runtime
+# documents/

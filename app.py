@@ -17,7 +17,7 @@ if load_status is False:
 
 URI = os.getenv("NEO4J_URI")
 AUTH = (os.getenv("NEO4J_USERNAME"), os.getenv("NEO4J_PASSWORD"))
-API_KEY = os.getenv("API_KEY")
+API_KEY = os.getenv("GOOGLE_API_KEY")
 
 graph = Neo4jGraph(
     url=URI,

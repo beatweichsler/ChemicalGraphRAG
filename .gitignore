@@ -1,2 +1,5 @@
 auraconnection.txt
 googleapikey.txt
+cura-app/cura-app.tar
+**/__pycache__
+**/prod.env

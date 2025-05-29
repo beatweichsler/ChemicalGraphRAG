@@ -1,0 +1,14 @@
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-google-genai
+langchain-neo4j
+neo4j
+streamlit-agraph
+python-dotenv
+faiss-cpu
+pypdf
+langchain-openai
+PyMuPDF
