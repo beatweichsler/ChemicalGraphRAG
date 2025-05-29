@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  neo4j-db:
+    image: neo4j_database:latest # Your custom Neo4j image with baked-in data
+    container_name: neo4j_db
+    ports:
+      - "7474:7474" # Local Neo4j access (localhost:7474)
+      - "7687:7687" # For Bolt client access from your host (e.g., Bloom, dev tools)
+    environment:
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+      
+      
+  frontend:
+    image: cura-app:latest
+    container_name: cura_app
+    ports:
+      - "8501:8501"
+    environment:
+      AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT}
+      AZURE_OPENAI_API_KEY: ${AZURE_OPENAI_API_KEY}
+      OPENAI_API_VERSION: ${OPENAI_API_VERSION}
+      AZURE_OPENAI_CHAT_DEPLOYMENT_NAME: ${AZURE_OPENAI_CHAT_DEPLOYMENT_NAME}
+      AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME: ${AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME}
+      NEO4J_URI: ${NEO4J_URI}
+      NEO4J_USERNAME: ${NEO4J_USERNAME} 
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD}
